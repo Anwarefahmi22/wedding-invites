@@ -1,0 +1,297 @@
+/* ===== Wedding Invite — Shared Theme (Rose & Gold) ===== */
+
+:root {
+  --rose-50: #fff5f6;
+  --rose-100: #fde8eb;
+  --rose-300: #f3b8c2;
+  --rose-500: #d98a9c;
+  --rose-700: #a85a6f;
+  --gold-300: #e8cf9e;
+  --gold-500: #cba35a;
+  --gold-700: #9c7a35;
+  --ink-900: #2c2226;
+  --ink-600: #5c4a50;
+  --paper: #fffaf7;
+  --shadow-soft: 0 10px 30px rgba(168, 90, 111, 0.12);
+  --radius-lg: 24px;
+  --radius-md: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, var(--rose-50) 0%, var(--paper) 40%, var(--rose-50) 100%);
+  color: var(--ink-900);
+  font-family: 'Tajawal', 'Cairo', system-ui, -apple-system, sans-serif;
+  direction: rtl;
+  text-align: center;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Cover / Intro Screen ---------- */
+.cover-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 40px 24px;
+  position: relative;
+}
+
+.ornament {
+  color: var(--gold-500);
+  font-size: 22px;
+  letter-spacing: 8px;
+}
+
+.intro-blessing {
+  font-size: 15px;
+  color: var(--ink-600);
+  line-height: 1.9;
+  max-width: 320px;
+}
+
+.family-line {
+  font-size: 14px;
+  color: var(--ink-600);
+  line-height: 1.8;
+}
+
+.family-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--rose-700);
+  margin: 2px 0 10px;
+}
+
+.couple-names {
+  font-family: 'Aref Ruqaa', 'Amiri', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--gold-700);
+  margin: 14px 0;
+  letter-spacing: 2px;
+}
+
+.couple-names .amp {
+  color: var(--rose-500);
+  margin: 0 10px;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  font-size: 13px;
+  color: var(--rose-500);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ---------- Countdown ---------- */
+.countdown-section {
+  padding: 50px 20px;
+}
+
+.countdown-label {
+  font-size: 14px;
+  color: var(--ink-600);
+  margin-bottom: 18px;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.countdown-box {
+  background: var(--rose-50);
+  border: 1px solid var(--rose-300);
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  min-width: 64px;
+  box-shadow: var(--shadow-soft);
+}
+
+.countdown-number {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--rose-700);
+  display: block;
+}
+
+.countdown-unit {
+  font-size: 11px;
+  color: var(--ink-600);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ---------- Program / Events ---------- */
+.program-section {
+  padding: 50px 20px;
+}
+
+.section-title {
+  font-family: 'Aref Ruqaa', 'Amiri', serif;
+  font-size: 26px;
+  color: var(--gold-700);
+  margin-bottom: 32px;
+}
+
+.event-card {
+  background: var(--paper);
+  border: 1px solid var(--gold-300);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-soft);
+  text-align: right;
+}
+
+.event-date {
+  font-size: 13px;
+  color: var(--gold-700);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.event-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--rose-700);
+  margin-bottom: 8px;
+}
+
+.event-meta {
+  font-size: 13px;
+  color: var(--ink-600);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.event-location-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--rose-100);
+  color: var(--rose-700);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ---------- RSVP ---------- */
+.rsvp-section {
+  padding: 50px 20px;
+  background: var(--rose-50);
+  border-radius: var(--radius-lg);
+  margin: 20px;
+}
+
+.rsvp-counter {
+  font-size: 16px;
+  color: var(--rose-700);
+  font-weight: 700;
+  margin-bottom: 24px;
+  background: var(--paper);
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-soft);
+}
+
+.rsvp-counter .num {
+  font-size: 22px;
+  color: var(--gold-700);
+  margin: 0 4px;
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.rsvp-form input {
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--rose-300);
+  font-size: 15px;
+  background: var(--paper);
+  text-align: right;
+  font-family: inherit;
+}
+
+.rsvp-form button {
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: linear-gradient(135deg, var(--rose-500), var(--gold-500));
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rsvp-form button:disabled {
+  opacity: 0.6;
+}
+
+.rsvp-message {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--rose-700);
+  font-weight: 600;
+}
+
+.guest-list {
+  margin-top: 24px;
+  text-align: right;
+  max-height: 220px;
+  overflow-y: auto;
+  background: var(--paper);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+}
+
+.guest-list-item {
+  font-size: 13px;
+  color: var(--ink-600);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--rose-100);
+}
+
+/* ---------- Footer ---------- */
+.footer-section {
+  padding: 40px 20px 60px;
+}
+
+.footer-names {
+  font-family: 'Aref Ruqaa', 'Amiri', serif;
+  font-size: 22px;
+  color: var(--gold-700);
+}

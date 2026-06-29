@@ -1,0 +1,61 @@
+{
+  "weddingId": "khaled-khawla",
+  "groomName": "خالد",
+  "brideName": "خولة",
+  "families": {
+    "groomFather": "محمد الدوسري",
+    "groomMother": "شويعة الدوسري",
+    "brideFather": "خالد العمري",
+    "brideMother": "ريا الدوسري"
+  },
+  "introLine": "بارك الله لهما وبارك عليهما وجمع بينهما في خير",
+  "mainEventDate": "2026-07-16T20:00:00+01:00",
+  "events": [
+    {
+      "title": "مراسم العقد",
+      "date": "2026-07-12T15:30:00+01:00",
+      "dateLabel": "12 / 7 / 2026",
+      "timeLabel": "3:30 PM",
+      "locationName": "فضاء الحبيب",
+      "lat": 35.9926,
+      "lng": 4.7611
+    },
+    {
+      "title": "استقبال الضيوف",
+      "date": "2026-07-13T16:30:00+01:00",
+      "dateLabel": "13 / 7 / 2026",
+      "timeLabel": "4:30 PM",
+      "locationName": "منزل العريس",
+      "lat": 35.9911,
+      "lng": 4.7598
+    },
+    {
+      "title": "جلسة تصوير",
+      "date": "2026-07-14T17:00:00+01:00",
+      "dateLabel": "14 / 7 / 2026",
+      "timeLabel": "5:00 PM",
+      "locationName": "برج الراس",
+      "lat": 36.0102,
+      "lng": 4.7733
+    },
+    {
+      "title": "مأدبة العشاء",
+      "date": "2026-07-15T18:30:00+01:00",
+      "dateLabel": "15 / 7 / 2026",
+      "timeLabel": "6:30 PM",
+      "locationName": "منزل العريس",
+      "lat": 35.9911,
+      "lng": 4.7598
+    },
+    {
+      "title": "حفل الأفراح",
+      "date": "2026-07-16T20:00:00+01:00",
+      "dateLabel": "16 / 7 / 2026",
+      "timeLabel": "8:00 PM",
+      "locationName": "فضاء موازين",
+      "lat": 36.0045,
+      "lng": 4.7820
+    }
+  ],
+  "closingLine": "يسعدنا مشاركتكم هذه الفرحة"
+}

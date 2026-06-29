@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>حفل زفاف خالد و خولة</title>
+
+  <meta property="og:title" content="حفل زفاف خالد و خولة" />
+  <meta property="og:description" content="يسعدنا مشاركتكم هذه الفرحة 🌸" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== شاشة الترحيب ===== -->
+  <section class="cover-screen" id="coverScreen">
+    <div class="ornament">✦ ✦ ✦</div>
+    <div class="intro-blessing" data-field="introLine"></div>
+
+    <div class="family-line">
+      تتشرف عائلتا<br />
+      السيد <span class="family-name" data-family="groomFather"></span>
+      والسيدة <span class="family-name" data-family="groomMother"></span>
+      و<br />
+      السيد <span class="family-name" data-family="brideFather"></span>
+      والسيدة <span class="family-name" data-family="brideMother"></span>
+    </div>
+
+    <div class="family-line">بدعوتكم لحضور حفل زفاف نجليهما</div>
+
+    <div class="couple-names">
+      <span data-field="groomName"></span>
+      <span class="amp">&</span>
+      <span data-field="brideName"></span>
+    </div>
+
+    <button id="openCardBtn" style="background:none;border:1px solid var(--gold-500);color:var(--gold-700);padding:10px 24px;border-radius:30px;font-size:14px;cursor:pointer;margin-top:10px;">
+      اضغط لفتح الدعوة
+    </button>
+
+    <div class="scroll-hint">اسحب للأسفل ↓</div>
+  </section>
+
+  <!-- ===== المحتوى الرئيسي ===== -->
+  <div id="mainContent">
+
+    <section class="countdown-section container">
+      <div class="countdown-label">لحظات تفصلنا عن اللقاء</div>
+      <div class="countdown-grid">
+        <div class="countdown-box">
+          <span class="countdown-number" id="cdDays">00</span>
+          <span class="countdown-unit">يوم</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="cdHours">00</span>
+          <span class="countdown-unit">ساعة</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="cdMin">00</span>
+          <span class="countdown-unit">دقيقة</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="cdSec">00</span>
+          <span class="countdown-unit">ثانية</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="program-section container">
+      <div class="section-title">برنامج الحفل</div>
+      <div id="eventsWrap"></div>
+    </section>
+
+    <section class="rsvp-section container">
+      <div class="section-title" style="font-size:22px;">تأكيد الحضور</div>
+
+      <div class="rsvp-counter">
+        🎉 <span class="num" id="rsvpCount">0</span> شخص أكدوا حضورهم
+      </div>
+
+      <form class="rsvp-form" id="rsvpForm">
+        <input type="text" name="name" placeholder="اسمك الكامل" required />
+        <input type="number" name="guestsCount" placeholder="عدد المرافقين (بما فيهم أنت)" min="1" max="20" value="1" required />
+        <button type="submit">سأحضر بإذن الله</button>
+      </form>
+
+      <div class="rsvp-message" id="rsvpMessage"></div>
+
+      <div class="guest-list" id="guestList"></div>
+    </section>
+
+    <section class="footer-section container">
+      <div class="footer-names">
+        <span data-field="groomName"></span> & <span data-field="brideName"></span>
+      </div>
+      <div class="intro-blessing" style="margin-top:10px;" data-field="closingLine"></div>
+    </section>
+
+  </div>
+
+  <script>
+    // تحميل بيانات هذا العرس (ملف JSON بنفس اسم العرس، بدون مجلد)
+    fetch('./khaled-khawla.json')
+      .then((r) => r.json())
+      .then((data) => {
+        window.WEDDING_CONFIG = data;
+        const script = document.createElement('script');
+        script.src = 'script.js';
+        document.body.appendChild(script);
+      })
+      .catch((err) => console.error('فشل تحميل khaled-khawla.json', err));
+  </script>
+
+  <style>
+    #mainContent { display: none; }
+    #mainContent.visible { display: block; animation: fadeIn 0.6s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+
+</body>
+</html>
