@@ -1,0 +1,394 @@
+/* ===== Wedding Invite v2 — Premium Rose & Gold (Pure CSS/SVG, No External Images) ===== */
+
+:root {
+  --rose-50: #fdf3f5;
+  --rose-100: #fbe4e8;
+  --rose-200: #f5c9d2;
+  --rose-300: #ecaab8;
+  --rose-500: #d4839a;
+  --rose-700: #a85a72;
+  --rose-900: #6e3a4a;
+  --gold-200: #f3e3bf;
+  --gold-400: #d9b76a;
+  --gold-500: #c9a24c;
+  --gold-700: #9c7a35;
+  --ink-900: #2c2226;
+  --ink-600: #685258;
+  --paper: #fffdfb;
+  --shadow-soft: 0 12px 40px rgba(168, 90, 114, 0.16);
+  --shadow-deep: 0 20px 60px rgba(110, 58, 74, 0.22);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--paper);
+  color: var(--ink-900);
+  font-family: 'Tajawal', system-ui, sans-serif;
+  direction: rtl;
+  text-align: center;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container { max-width: 480px; margin: 0 auto; padding: 0 22px; position: relative; }
+
+/* ---------- Decorative SVG flourishes (inline, no external files) ---------- */
+.flourish {
+  width: 90px;
+  height: 40px;
+  margin: 0 auto;
+  opacity: 0.85;
+}
+
+.divider-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+  margin: 18px auto;
+}
+
+/* ---------- Cover Screen ---------- */
+.cover-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 50px 28px;
+  position: relative;
+  background:
+    radial-gradient(ellipse 600px 400px at 15% 0%, var(--rose-100) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 500px at 85% 100%, var(--gold-200) 0%, transparent 55%),
+    linear-gradient(180deg, var(--paper) 0%, var(--rose-50) 50%, var(--paper) 100%);
+  overflow: hidden;
+}
+
+.cover-screen::before,
+.cover-screen::after {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background-image:
+    radial-gradient(circle, var(--gold-400) 1.5px, transparent 1.6px);
+  background-size: 26px 26px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+.cover-screen::before { top: -40px; right: -60px; transform: rotate(15deg); }
+.cover-screen::after { bottom: -40px; left: -60px; transform: rotate(-10deg); }
+
+.frame-corner {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-top: 1.5px solid var(--gold-500);
+  border-right: 1.5px solid var(--gold-500);
+  opacity: 0.55;
+}
+.frame-corner.tl { top: 24px; left: 24px; border-top: none; border-right: none; border-bottom: 1.5px solid var(--gold-500); border-left: 1.5px solid var(--gold-500); }
+.frame-corner.tr { top: 24px; right: 24px; }
+.frame-corner.bl { bottom: 24px; left: 24px; border-top: none; border-right: none; border-bottom: 1.5px solid var(--gold-500); border-left: 1.5px solid var(--gold-500); }
+.frame-corner.br { bottom: 24px; right: 24px; border-bottom: 1.5px solid var(--gold-500); border-right: 1.5px solid var(--gold-500); border-top: none; }
+
+.ornament-row { display: flex; gap: 14px; justify-content: center; z-index: 1; }
+.diamond {
+  width: 9px; height: 9px;
+  background: var(--gold-500);
+  transform: rotate(45deg);
+  box-shadow: 0 0 12px rgba(201, 162, 76, 0.5);
+}
+
+.intro-blessing {
+  font-size: 15px;
+  color: var(--ink-600);
+  line-height: 2;
+  max-width: 300px;
+  z-index: 1;
+}
+
+.family-line {
+  font-size: 13.5px;
+  color: var(--ink-600);
+  line-height: 1.9;
+  z-index: 1;
+}
+
+.family-name {
+  font-family: 'Amiri', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--rose-700);
+  margin: 2px 0 8px;
+  display: inline-block;
+}
+
+.couple-names {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--gold-700);
+  margin: 16px 0 6px;
+  line-height: 1.2;
+  text-shadow: 0 2px 18px rgba(201, 162, 76, 0.35);
+  z-index: 1;
+}
+
+.couple-names .amp {
+  color: var(--rose-500);
+  font-size: 38px;
+  margin: 0 14px;
+  vertical-align: middle;
+}
+
+.open-card-btn {
+  margin-top: 14px;
+  background: transparent;
+  border: 1.5px solid var(--gold-500);
+  color: var(--gold-700);
+  padding: 13px 34px;
+  border-radius: 40px;
+  font-size: 14.5px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+.open-card-btn:active { transform: scale(0.96); background: var(--gold-200); }
+
+.scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  font-size: 12.5px;
+  color: var(--rose-500);
+  animation: bounce 2.2s infinite;
+  z-index: 1;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(10px); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Main content reveal ---------- */
+#mainContent { display: none; }
+#mainContent.visible { display: block; animation: fadeIn 0.7s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- Countdown — circular premium style ---------- */
+.countdown-section {
+  padding: 56px 20px 40px;
+  background: linear-gradient(180deg, var(--paper), var(--rose-50));
+}
+
+.countdown-label {
+  font-family: 'Amiri', serif;
+  font-size: 16px;
+  color: var(--rose-700);
+  margin-bottom: 26px;
+}
+
+.countdown-grid { display: flex; justify-content: center; gap: 14px; }
+
+.countdown-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--gold-400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+.countdown-circle::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--rose-200);
+}
+
+.countdown-number {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--rose-700);
+  font-family: 'Amiri', serif;
+}
+.countdown-unit { font-size: 10px; color: var(--ink-600); margin-top: 2px; }
+
+/* ---------- Program — vertical timeline like reference design ---------- */
+.program-section { padding: 50px 20px 60px; position: relative; }
+
+.section-title {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 30px;
+  color: var(--gold-700);
+  margin-bottom: 6px;
+}
+.section-subtitle { font-size: 12.5px; color: var(--rose-500); letter-spacing: 2px; margin-bottom: 40px; }
+
+.timeline {
+  position: relative;
+  padding: 10px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  right: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: linear-gradient(180deg, transparent, var(--gold-400) 8%, var(--gold-400) 92%, transparent);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 46px;
+  text-align: right;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+.timeline-item:last-child { padding-bottom: 10px; }
+
+.timeline-dot {
+  position: absolute;
+  right: 50%;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  background: var(--paper);
+  border: 2.5px solid var(--gold-500);
+  border-radius: 50%;
+  transform: translateX(50%);
+  z-index: 2;
+  box-shadow: 0 0 0 6px var(--paper);
+}
+
+.timeline-icon {
+  position: absolute;
+  left: calc(50% - 26px);
+  top: -6px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: var(--rose-50);
+  border-radius: 50%;
+  border: 1px solid var(--rose-200);
+}
+
+.timeline-card {
+  width: 78%;
+  margin-right: auto;
+  background: var(--paper);
+  border: 1px solid var(--gold-200);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.event-date { font-size: 12px; color: var(--gold-700); font-weight: 700; margin-bottom: 4px; letter-spacing: 0.5px; }
+.event-title { font-family: 'Amiri', serif; font-size: 20px; font-weight: 700; color: var(--rose-700); margin-bottom: 8px; }
+.event-meta { font-size: 12.5px; color: var(--ink-600); display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.event-location-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--rose-100);
+  color: var(--rose-700);
+  border: none;
+  border-radius: 20px;
+  padding: 7px 13px;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ---------- RSVP ---------- */
+.rsvp-section {
+  padding: 54px 22px;
+  background: linear-gradient(180deg, var(--rose-50), var(--paper));
+  margin: 0;
+  position: relative;
+}
+
+.rsvp-counter {
+  font-size: 15px;
+  color: var(--rose-700);
+  font-weight: 700;
+  margin-bottom: 26px;
+  background: var(--paper);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--gold-200);
+}
+
+.rsvp-counter .num { font-size: 23px; color: var(--gold-700); font-family: 'Amiri', serif; }
+
+.rsvp-form { display: flex; flex-direction: column; gap: 13px; max-width: 340px; margin: 0 auto; }
+
+.rsvp-form input {
+  padding: 15px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--rose-200);
+  font-size: 15px;
+  background: var(--paper);
+  text-align: right;
+  font-family: inherit;
+}
+.rsvp-form input:focus { outline: none; border-color: var(--gold-500); }
+
+.rsvp-form button {
+  padding: 15px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, var(--rose-500), var(--gold-500));
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+.rsvp-form button:disabled { opacity: 0.6; }
+
+.rsvp-message { margin-top: 16px; font-size: 14px; color: var(--rose-700); font-weight: 700; min-height: 20px; }
+
+.guest-list {
+  margin-top: 26px;
+  text-align: right;
+  max-height: 220px;
+  overflow-y: auto;
+  background: var(--paper);
+  border-radius: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--rose-100);
+}
+.guest-list-item { font-size: 13px; color: var(--ink-600); padding: 7px 0; border-bottom: 1px solid var(--rose-100); }
+.guest-list-item:last-child { border-bottom: none; }
+
+/* ---------- Footer ---------- */
+.footer-section { padding: 50px 20px 70px; position: relative; }
+.footer-names { font-family: 'Aref Ruqaa', serif; font-size: 28px; color: var(--gold-700); }
+.footer-rings { font-size: 26px; margin-top: 18px; color: var(--gold-500); }
